@@ -1,6 +1,6 @@
-# textfmt
+# TextFormat
 
-A lightweight Python module for ANSI text formatting, customizable word art, and table rendering in CLI applications.
+TextFormat is a lightweight Python module for ANSI text formatting, customizable word art, and table rendering in CLI applications.
 
 ## Features
 - **ANSI Colors & Styles** – Easily format text using intuitive color mappings.
@@ -14,34 +14,34 @@ pip install textformat
 ```
 
 ## Usage
-
 Basic Text Formatting
-
 ```python
-import textfmt
+from textformat import TextFormat
 
-print(textfmt.TextFmt.style("Hello, World!", textfmt.TextFmt.BOLD, textfmt.TextFmt.COLORS["blue"]))
+print(TextFormat.style("Hello, World!", TextFormat.BOLD, TextFormat.COLORS["blue"]))
 ```
 
 Custom Word Art Banner
-```python
-import textfmt.word_art
 
-print(textfmt.word_art.WordArt.banner("TEXTFMT", char="*", width=40))
+```python
+from textformat.word_art import WordArt
+
+print(WordArt.banner("TEXTFORMAT", char="*", width=40))
 ```
 
 Table Rendering
 ```python
-import textfmt.table
+from textformat.table import TableFormatter
 
-headers = ["Name", "Color", "Effect"]
+headers = ["Feature", "Color", "Effect"]
 data = [
     ["Bold", "White", "Strong emphasis"],
     ["Underline", "Blue", "Text decoration"],
     ["Warning", "Yellow", "Cautionary message"],
 ]
 
-print(textfmt.table.TableFormatter.generate(headers, data))
+print(TableFormatter.generate(headers, data))
 ```
-## License
+
+License
 MIT License – Free to use and modify.
