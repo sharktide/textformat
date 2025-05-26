@@ -10,7 +10,7 @@ TextFormat is a lightweight Python module for ANSI text formatting, customizable
 ## Installation
 Install via PyPI:
 ```sh
-pip install textformat
+pip install textfmt
 ```
 
 ## Usage
