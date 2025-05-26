@@ -43,5 +43,6 @@ data = [
 print(TableFormatter.generate(headers, data))
 ```
 
-License
+## License
+
 MIT License – Free to use and modify.
