@@ -1,3 +1,4 @@
+LICENSE
 README.md
 pyproject.toml
 textfmt.egg-info/PKG-INFO
@@ -5,6 +6,7 @@ textfmt.egg-info/SOURCES.txt
 textfmt.egg-info/dependency_links.txt
 textfmt.egg-info/top_level.txt
 textformat/__init__.py
+textformat/progress.py
 textformat/table.py
 textformat/textformat.py
 textformat/word_art.py

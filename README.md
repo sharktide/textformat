@@ -43,6 +43,28 @@ data = [
 print(TableFormatter.generate(headers, data))
 ```
 
+File Download Progress Bars
+
+```python
+from textformat.progress import Color, DownloadProgressBar
+from pathlib import Path
+def download_with_progress(url: str, output_path: Path, download_color, complete_color):
+    response = requests.get(url, stream=True)
+    total = int(response.headers.get('content-length', 0))
+
+    if response.status_code != 200:
+        raise Exception(f"Failed to download from {url}. HTTP status: {response.status_code}")
+
+    progress = DownloadProgressBar(total, prefix=output_path.name, 
+                           download_color=download_color, complete_color=complete_color)
+    with open(output_path, "wb") as f:
+        for chunk in response.iter_content(chunk_size=8192):
+            if chunk:
+                f.write(chunk)
+                progress.update(progress.downloaded + len(chunk))
+    print()
+    download_with_progress('https://huggingface.co/sharktide/recyclebot0/resolve/main/tf_model.h5', Path("tf_model.h5"), Colors.CYAN, Colors.GREEN)
+```
 ## License
 
 MIT License – Free to use and modify.
